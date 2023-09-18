@@ -1,0 +1,287 @@
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-size: 16px;
+}
+
+// Color    
+$mainblue: #003b95;
+$lighter-blue: #006ce4;
+$yellow: #ffb700;
+$lighter-yellow: #febb02;
+$green: #008234;
+$lighter-green: #F1FEF6;
+$white: #fff;
+$blur-gray: #ccc;
+$black: #000;
+$color-hover: rgba(198, 190, 238, 0.1);
+
+// Common
+.imgi {
+    width: 24px;
+    height: 24px;
+}
+
+%equal-heights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@mixin btn ($py, $px, $color, $bg) {
+    padding: $py $px;
+    color: $color;
+    background-color: $bg;
+    cursor: pointer;
+}
+
+@mixin a-tag ($py, $px, $color) {
+    padding: $py $px;
+    color: $color;
+    cursor: pointer;
+}
+
+@mixin hover ($bg) {
+    background-color: $bg;
+    cursor: pointer;
+
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 24px;
+    color: $black;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4 {
+    font-size: 16px;
+
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+    margin-right: 8px;
+}
+
+li {
+    list-style-type: none;
+    font-size: 14px;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: $mainblue;
+    color: $white;
+    border: none;
+}
+
+body {
+    color: $white;
+    min-height: 3000px;
+    header,
+    footer {
+        color: $white;
+    }
+
+}
+
+header {
+    position: relative;
+    background: $mainblue;
+
+    #section-nav {
+        width: 75%;
+        margin: 0 auto;
+
+    }
+
+    .nav-top {
+        padding: 20px;
+
+        &-item {
+            @extend %equal-heights;
+
+            &-logo>a {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            &-childs a {
+                padding: 12px;
+                border-radius: 5px;
+
+                &:hover {
+                    @include hover($color-hover)
+                }
+            }
+
+            i {
+                font-size: 22px;
+            }
+
+            img {
+                border-radius: 50%;
+                height: 24px;
+                transform: translateY(20%)
+            }
+
+            button {
+                &.btn-log {
+                    @include btn(10px, 12px, $lighter-blue , $white);
+                    border-radius: 5px;
+                    font-weight: bold;
+
+                    &:hover {
+                        @include hover(#ede7e7);
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-bottom {
+        &-transports-list {
+            .f-item {
+                border: 1px solid $white;
+                background-color: $color-hover;
+            }
+
+            .transport {
+                border-radius: 100px;
+                display: inline-block;
+                padding: 10px;
+                text-align: center;
+
+                a {
+                    display: flex;
+                    align-items: flex-end;
+                    margin: 0 auto;
+                    padding: 0 8px;
+                }
+
+                img {   
+                    margin-right: 8px;
+                }
+
+                &~ :hover {
+                    @include hover($color-hover)
+                }
+            }
+        }
+    }
+
+    .nav-content {
+        padding: 5rem 0;
+
+        p {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    }
+}
+
+#body {
+    width: 75%; 
+    margin: 0 auto;
+}
+
+#booking {
+    
+    color: $black;
+    form {
+        position: absolute;
+        transform: translateY(-50%);
+        background-color: $lighter-yellow;
+        display: flex;
+        padding: 4px;
+        align-items: center;
+        border-radius: 10px;
+            
+        input {
+                padding-right: 230px;
+                
+        }
+            img {
+                margin-right: 8px;
+            }
+        }
+        .se-item,
+        .th-item,
+        .fo-item {
+            margin-left: 4px;
+            
+        }
+        .f-item,
+        .se-item,
+        .th-item {
+            padding: 12px;
+        }
+
+        .th-item {
+            button {
+                display: inline-block;
+            }
+        }
+        .inf {
+            display: flex;
+            align-items: center;
+            background-color: $white;
+            // margin-left: 4px;
+            border-radius: 5px;
+        }
+
+    }
+
+    input {
+        border: none;
+        padding: 8px 0;
+    }
+
+    .btn {
+        color: $black;
+        background-color: $white;
+
+        &-search {
+            font-size: 20px;
+            font-weight: 500;
+            padding: 16px;
+            background-color: $lighter-blue;
+            border-radius: 5px;
+        }
+    }
+    .booking-sup {
+        // margin-top: 24px;
+        padding-top: 40px;
+        
+        label {
+            margin-right: 12px;
+        }
+    }
+ 
+#promote {
+    margin-top: 24px;
+    
+}
+
+
+
+
+footer {
+    background-color: #000;
+}
